@@ -7,9 +7,10 @@ import Link from './Link.jsx'
 import { scrollToSection } from './scrollToSection.js'
 import { navigate } from './routing.js'
 import { supabase } from './supabase.js'
+import { applyHead, CONTACT_EMAIL as EMAIL, PACKAGE_PRICE_USD } from './seo.js'
 
-export const CONTACT_EMAIL = 'hello@techoutthebox.com'
-export const PACKAGE_PRICE = '$250'
+export const CONTACT_EMAIL = EMAIL
+export const PACKAGE_PRICE = `$${PACKAGE_PRICE_USD}`
 
 // Opens a Gmail compose window addressed to us. Unlike mailto:, it needs no mail app on the visitor's device.
 const composeUrl = (subject = '', body = '') =>
@@ -361,7 +362,7 @@ export function ContactCta({ attached = false }) {
 }
 
 // Shared layout: header, pinned black hero, white content sliding over it, footer
-function Page({ title, hero, heroClass = '', pageClass = '', back, floatingLabel = 'Get in touch', children }) {
+function Page({ path, hero, heroClass = '', pageClass = '', back, floatingLabel = 'Get in touch', children }) {
   const headerHidden = useHideOnScroll()
   const headerRef = useRef(null)
   const contentRef = useRef(null)
@@ -377,8 +378,8 @@ function Page({ title, hero, heroClass = '', pageClass = '', back, floatingLabel
   const showMobileCta = headerDark && !contactInView
 
   useEffect(() => {
-    document.title = title
-  }, [title])
+    applyHead(path)
+  }, [path])
 
   return (
     <div id="top" ref={pageRef} className={pageClass}>

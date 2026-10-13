@@ -13,13 +13,14 @@ const steps = [
 
 const hero = (
   <>
-    <span className="eyebrow">Websites for small business</span>
+    <span className="eyebrow">Affordable website design for small business</span>
     <h1>
       Get your business online. <em>Out of the box.</em>
     </h1>
     <p>
-      Domain, email, website and hosting, all in one place. We handle the tech
-      so you can focus on your business.
+      Professional website design and development, plus your domain, email and
+      hosting, all in one place. We handle the tech so you can focus on your
+      business.
     </p>
     <div className="hero-actions">
       <a href="#how" className="btn btn-primary">
@@ -34,7 +35,7 @@ const hero = (
 
 function HomePage() {
   return (
-    <Page title="techoutthebox | Websites for small business" hero={hero}>
+    <Page path="/" hero={hero}>
       <section id="services" className="wrap section services-section">
         <div className="section-head center">
           <h2>

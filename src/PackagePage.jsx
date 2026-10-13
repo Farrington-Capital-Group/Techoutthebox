@@ -29,7 +29,7 @@ const services = [
 
 const hero = (
   <>
-    <span className="eyebrow">The package</span>
+    <span className="eyebrow">Small business website package</span>
     <h1>
       Everything you need. <em>One price.</em>
     </h1>
@@ -42,7 +42,7 @@ const hero = (
 
 function PackagePage() {
   return (
-    <Page title="The package | techoutthebox" hero={hero}
+    <Page path="/package" hero={hero}
       heroClass="hero-center"
       pageClass="page-package"
       floatingLabel="Get started"
